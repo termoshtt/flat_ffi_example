@@ -3,7 +3,7 @@ pool:
 steps:
   - script: |
       sudo apt update
-      sudo apt instal -y cmake python3
+      sudo apt install -y g++ make cmake libpython3-dev libboost-dev python3-numpy
     displayName: apt install
   - script: |
       cmake -Bbuild -H.
