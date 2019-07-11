@@ -10,5 +10,5 @@ steps:
     displayName: Build C++ library
   - script: |
       cd build
-      pytest ../test.py
+      pytest-3 ../test.py
     displayName: Test Python binding
