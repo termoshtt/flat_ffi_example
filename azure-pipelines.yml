@@ -2,6 +2,8 @@ container: 'termoshtt/flat_ffi_example:latest'
 pool:
   vmImage: 'ubuntu-16.04'
 steps:
+  - checkout: self
+    submodules: true
   - script: |
       cmake -Bbuild -H.
       make -C build -j
