@@ -1,4 +1,4 @@
-container: 'termoshtt/flat_ffi_example'
+container: 'termoshtt/flat_ffi_example:latest'
 pool:
   vmImage: 'ubuntu-16.04'
 steps:
