@@ -3,10 +3,6 @@ pool:
   vmImage: 'ubuntu-16.04'
 steps:
   - script: |
-      sudo apt update
-      sudo apt install -y g++ make cmake libpython3-dev libboost-dev python3-numpy
-    displayName: apt install
-  - script: |
       cmake -Bbuild -H.
       make -C build -j
     displayName: build
