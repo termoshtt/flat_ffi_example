@@ -33,3 +33,7 @@
 
 # Build directory of cmake
 build*/
+
+# Python
+*.pyc
+__pycache__/

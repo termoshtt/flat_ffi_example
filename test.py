@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import flat_example
+import numpy
+import flat_cpp
 
-a = flat_example.new_zero(3)
-print(a)
+
+def test_cpp_binding():
+    a = flat_cpp.new_zero(3)
+    assert (a == numpy.zeros(3)).all()

@@ -10,7 +10,7 @@ np::ndarray new_zero1(unsigned int N) {
   return np::zeros(shape, dtype);
 }
 
-BOOST_PYTHON_MODULE(flat_example) {
+BOOST_PYTHON_MODULE(flat_cpp) {
   Py_Initialize();
   np::initialize();
 

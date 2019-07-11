@@ -8,5 +8,9 @@ login:
 build:
 	docker build . -t ${NAME}
 
-push: login
+run: build
+	docker run -it --rm ${NAME}
+
+push: login build
 	docker push ${NAME}
+

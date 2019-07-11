@@ -7,4 +7,9 @@ steps:
   - script: |
       cmake -Bbuild -H.
       make -C build -j
-    displayName: build
+    displayName: Build C++ library
+  - script: |
+      mv test.py build
+      cd build
+      pytest-3 test.py
+    displayName: Test Python binding

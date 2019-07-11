@@ -9,5 +9,7 @@ RUN apt-get update     \
     libpython3-dev     \
     make               \
     python3-numpy      \
+    python3-pip        \
+    python3-pytest     \
  && apt-get clean      \
  && rm -rf /var/lib/apt/lists/*
