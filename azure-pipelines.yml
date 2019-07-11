@@ -7,4 +7,9 @@ steps:
   - script: |
       cmake -Bbuild -H.
       make -C build -j
-    displayName: build
+    displayName: Build C++ library
+  - script: |
+      pip install -r requirements.txt
+      cd build
+      pytest ../test.py
+    displayName: Test Python binding
