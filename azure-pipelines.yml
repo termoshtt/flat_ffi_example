@@ -1,7 +1,11 @@
-container: 'termoshtt/flat_ffi_example:latest'
+container: 'ubuntu:18.04'
 pool:
   vmImage: 'ubuntu-16.04'
 steps:
+  - script: |
+      apt update
+      apt install -y g++ make cmake libboost-all-dev libpython3-dev python3-numpy
+    displayName: apt install
   - script: |
       cmake -Bbuild -H.
       make -C build -j
