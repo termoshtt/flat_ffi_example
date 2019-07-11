@@ -5,11 +5,12 @@ all: build
 login:
 	docker login
 
-push: login
-	docker push ${NAME}
-
 build:
 	docker build . -t ${NAME}
 
 run: build
 	docker run -it --rm ${NAME}
+
+push: login build
+	docker push ${NAME}
+
