@@ -1,6 +1,8 @@
 #include <boost/python.hpp>
 #include <boost/python/numpy.hpp>
 
+#include "data_generated.h"
+
 namespace p = boost::python;
 namespace np = boost::python::numpy;
 
