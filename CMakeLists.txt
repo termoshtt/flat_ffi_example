@@ -8,7 +8,6 @@ find_package(PythonLibs REQUIRED)
 include_directories(
   ${Boost_INCLUDE_DIRS}
   ${PYTHON_INCLUDE_DIRS}
-  ${FLATBUFFERS_INCLUDE_DIRS}
   )
 
 add_library(flat_cpp SHARED
