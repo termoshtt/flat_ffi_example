@@ -19,10 +19,11 @@ def test_flatbuffers():
     FooBar.FooBarStart(builder)
     FooBar.FooBarAddHeight(builder, 150)
     FooBar.FooBarAddSay(builder, say)
-    total = FooBar.FooBarEnd(builder)
-    builder.Finish(total)
+    off = FooBar.FooBarEnd(builder)
+    builder.Finish(off)
 
-    foobar = builder.Output()
+    buf = builder.Output()
+    foobar = FooBar.FooBar.GetRootAsFooBar(buf, 0)
 
     assert foobar.Height() == 150
-    assert foobar.Say() == "Madoka kawaii"
+    assert foobar.Say() == b"Madoka kawaii"
