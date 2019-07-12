@@ -9,7 +9,7 @@ steps:
       make -C build -j
     displayName: Build C++ library
   - script: |
-      mv test.py build
+      pip3 install -r requirements.txt --user
       cd build
       pytest-3 test.py
     displayName: Test Python binding
