@@ -5,13 +5,21 @@ add_subdirectory(flatbuffers EXCLUDE_FROM_ALL)
 
 find_package(Boost COMPONENTS python3 numpy3 REQUIRED)
 find_package(PythonLibs REQUIRED)
-include_directories(${Boost_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
+include_directories(
+  ${Boost_INCLUDE_DIRS}
+  ${PYTHON_INCLUDE_DIRS}
+  ${FLATBUFFERS_INCLUDE_DIRS}
+  )
 
 add_library(flat_cpp SHARED
   data_generated.h
   flat.cpp
   )
-target_link_libraries(flat_cpp ${Boost_LIBRARIES} ${PYTHON_LIBRARY})
+target_link_libraries(flat_cpp
+  ${Boost_LIBRARIES}
+  ${PYTHON_LIBRARY}
+  flatbuffers
+  )
 set_target_properties(flat_cpp PROPERTIES PREFIX "")
 
 add_custom_command(
